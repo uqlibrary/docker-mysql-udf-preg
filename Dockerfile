@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install -y wget ca-certificates build-essential li
       cd lib_mysqludf_preg-lib_mysqludf_preg-1.2-rc2 && \
       ./configure && \
       make install && \
-      make MYSQL="mysql -p$MYSQL_ROOT_PASSWORD" installdb && \
       apt-get remove -y wget ca-certificates build-essential libmysqlclient-dev libpcre3-dev && \
       cd .. && rm -rf lib_mysqludf_preg-lib_mysqludf_preg-1.2-rc2 && \
       apt-get clean && apt-get purge
