@@ -1,7 +1,7 @@
 FROM mysql:latest
 
 RUN apt-get update && apt-get install -y wget ca-certificates build-essential libmysqlclient-dev libpcre3-dev && \
-      wget -O --no-check-certificate lib_mysqludf_preg-1.2-rc2.tar.gz https://github.com/mysqludf/lib_mysqludf_preg/archive/lib_mysqludf_preg-1.2-rc2.tar.gz && \
+      wget -O lib_mysqludf_preg-1.2-rc2.tar.gz https://github.com/mysqludf/lib_mysqludf_preg/archive/lib_mysqludf_preg-1.2-rc2.tar.gz && \
       tar xzf lib_mysqludf_preg-1.2-rc2.tar.gz && \
       cd lib_mysqludf_preg-lib_mysqludf_preg-1.2-rc2 && \
       ./configure && \
