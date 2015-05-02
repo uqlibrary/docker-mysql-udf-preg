@@ -7,5 +7,8 @@ RUN apt-get update && apt-get install -y wget ca-certificates build-essential li
       ./configure && \
       make install && \
       apt-get remove -y wget ca-certificates build-essential libmysqlclient-dev libpcre3-dev && \
+      cp installdb.sql ../. && \
       cd .. && rm -rf lib_mysqludf_preg-lib_mysqludf_preg-1.2-rc2 && \
       apt-get clean && apt-get purge
+
+CMD mysql -p$MYSQL_ROOT_PASSWORD installdb.sql
