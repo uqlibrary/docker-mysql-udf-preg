@@ -1,4 +1,4 @@
-FROM mysql:latest
+FROM mysql:5.7
 
 RUN apt-get update && apt-get install -y wget ca-certificates build-essential libmysqlclient-dev libpcre3-dev && \
       wget -O lib_mysqludf_preg-1.2-rc2.tar.gz https://github.com/mysqludf/lib_mysqludf_preg/archive/lib_mysqludf_preg-1.2-rc2.tar.gz && \
